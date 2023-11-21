@@ -1,0 +1,18 @@
+if event == '-RESTART-':
+        restart_game()
+
+    if c == 0:
+        for i in range(1, 10):
+            if event == f'-{i}-' and window[event].GetText() == '':
+                if a == 1:
+                    window[event].update('X', button_color=('blue', 'white'))
+                    a = 0
+                    b += 1
+                    current_player = (current_player + 1) % 2  # Switch players
+                    window['-TURN-'].update(f"{player_names[current_player]}'s Turn", background_color="skyblue")
+                else:
+                    window[event].update('O', button_color=('red', 'white'))
+                    a = 1
+                    b += 1
+                    current_player = (current_player + 1) % 2  # Switch players
+                    window['-TURN-'].update(f"{player_names[current_player]}'s Turn", background_color="skyblue")
